@@ -1,0 +1,47 @@
+<div>
+This the first questionnaire for the astronomical spectroscopy course.  In this questionnaire, you will be
+asked 4 questions.  You may consult any resource that you like to complete the work, but all work must be your own.  The questionnaire should take approximately less than a 1/2 hour to complete.
+</div>
+<br><br>
+
+<form>
+ <div class="name">
+ <label>Surname</label>
+    <input type="text" name="name" ng-model="app.project.name" required>
+    <span ng-show="app.project.name.$error.required" class="help-inline">
+        Required</span>
+ </div>
+
+ <div>
+ <h2> Question 1 </h2>
+ <label>Name fives things that can be studied by using spectra.</label>
+ <br>
+ <textarea rows=6 cols='80' name="answer1" ng-model="app.project.answer1"></textarea>
+ </div>
+
+ <div>
+ <h2> Question 2 </h2>
+ <label> Which is more optical thick: the Earth's atmosphere with k=0.0001 cm^2/g, rho=0.001 g/cm^3, and height of 1 km or a dust cloud with an opactiy of k=0.0001 cm^2/g, p=1x10^-6 particles/cm^3, and length of 1 pc? Assume a dust particle  has a mass of 7.5x10^-7 g.</label>
+ <br>
+ <textarea rows=6 cols='80' name="answer3" ng-model="app.project.answer3"></textarea>
+ </div>
+
+ <div>
+ <h2> Question 3 </h2>
+ <label>What are intensity, emission coefficient, and absorption coefficient?  What are the units of each ?</label>
+ <br>
+ <textarea rows=6 cols='80' name="answer4" ng-model="app.project.answer4"></textarea>
+ </div>
+
+ <div>
+ <h2> Question 4 </h2>
+ <label>What aspects of astronomy are you interested in?  What questions would you like to see answered during this course?</label>
+ <br>
+ <textarea rows=6 cols='80' name="answer5" ng-model="app.project.answer5"></textarea>
+ </div>
+
+
+ <br>
+  <a href='q1finish'><button ng-click="app.save()" class="btn btn-submit">Submit</button></a>
+</form>
+
