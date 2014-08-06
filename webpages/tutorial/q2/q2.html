@@ -1,0 +1,15 @@
+
+
+ <div name='question2' ng-controller='pythonCtrl as pyCtrl'>
+ <h2> Question 2 </h2>
+ <label>Write a python function to calculate the Intensity in terms of ergs/cm<sup>2</sup>/sr/s/&#197 generated from a blackbody as a function of Temperature (T in K) and wavelength (&#955 in &#197).  Please use the built-in python math package for mathematical functions. The function should only return a float. </label>
+ <br>
+ <textarea id='a2area' rows=6 cols='80' name="answer2" ng-model="app.input">
+ </textarea>
+ <br>
+ <div> <button type="button" ng-click="pyCtrl.runpython(app.input)">Check My Work </button> <i stype='display:inline-block;' ng-show='pyCtrl.hint'> Do you need a <a href='blackbody-freq.py' target="_blank">hint</a>?</i></div>
+ 
+<pre ng-show="pyCtrl.show" id="a2output" >{{pyCtrl.result}}</pre>
+
+ </div>
+

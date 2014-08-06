@@ -1,0 +1,35 @@
+
+
+<div class="container" ng-controller='AppCtrl as app' >
+<h2>Questionnaire #2</h2>
+
+<div ng-hide='app.finish'> This the second questionnaire for the astronomical spectroscopy course.  In this questionnaire, you will be
+asked 4 questions.  You may consult any resource that you like to complete the work, but all work must be your own.  
+The questionnaire should take approximately less than a 1/2 hour to complete.
+</div>
+
+<div ng-show='app.finish'> Thank you for submitting Questionnaire #2! </div>
+
+<form ng-hide='app.finish' name="questionsForm">
+ <div class="name">
+ <label>Surname</label>
+    <input type="text" name="name" ng-model="app.project.name" required>
+    <span ng-show="app.project.name.$error.required" class="help-inline">
+        Required</span>
+ </div>
+
+
+  <section class="tab" style="height: 400px;">
+    <ul class='nav nav-pills'>
+       <li ng-class="{ active:tab.isSet(0)}"> <a href ng-click="tab.setTab(0)"> Q1 </a> </li>
+       <li ng-class="{ active:tab.isSet(1)}"> <a href ng-click="tab.setTab(1)"> Q2 </a> </li>
+       <li ng-class="{ active:tab.isSet(2)}"> <a href ng-click="tab.setTab(2)"> Q3 </a> </li>
+       <li ng-class="{ active:tab.isSet(3)}"> <a href ng-click="tab.setTab(3)"> Q4 </a> </li>
+    </ul>
+    <div ng-include='tab.questions[tab.tab]'></div>
+    
+  </section>
+  <button ng-disabled="myForm.$invalid" ng-click='app.save()'>Submit</button>
+</form>
+
+</div>
